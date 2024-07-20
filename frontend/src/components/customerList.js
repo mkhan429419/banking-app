@@ -8,7 +8,7 @@ const CustomersList = () => {
 
   useEffect(() => {
     axios
-      .get("https://banking-app-backend-1adw.onrender.com/api/customers")
+      .get("http://localhost:3002/api/customers")
       .then((response) => setCustomers(response.data))
       .catch((error) => console.error(error));
   }, []);

@@ -9,7 +9,7 @@ const CustomerDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://banking-app-backend-1adw.onrender.com/api/customers/${id}`)
+      .get(`http://localhost:3002/api/customers/${id}`)
       .then((response) => setCustomer(response.data))
       .catch((error) => console.error(error));
   }, [id]);

@@ -12,7 +12,7 @@ const TransferMoney = () => {
 
   useEffect(() => {
     axios
-      .get("https://banking-app-backend-1adw.onrender.com/api/customers")
+      .get("http://localhost:3002/api/customers")
       .then((response) => setCustomers(response.data))
       .catch((error) => console.error(error));
   }, []);
@@ -20,10 +20,11 @@ const TransferMoney = () => {
   const handleTransfer = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        "https://banking-app-backend-1adw.onrender.com/api/customers/transfer",
-        { fromId, toId, amount }
-      );
+      await axios.post("http://localhost:3002/api/customers/transfer", {
+        fromId,
+        toId,
+        amount,
+      });
       navigate("/customers");
     } catch (error) {
       console.error(error);
